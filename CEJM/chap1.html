@@ -264,7 +264,8 @@
                 >
                   <img
                     src="https://www.quaranta-academy.fr/wp-content/uploads/2025/11/ChatGPT-Image-15-nov.-2025-13_16_10.png"
-                    alt=""
+                    alt="Circuit économique"
+                    class="w-full rounded-lg"
                   />
                 </div>
                 <p class="text-center text-gray-600 mt-4 text-sm">
@@ -443,36 +444,292 @@
             <!-- Quiz rapide -->
             <div class="bg-white rounded-xl shadow-md p-6">
               <h3 class="text-lg font-bold text-gray-800 mb-4">Quiz rapide</h3>
+
+              <!-- Question 1 -->
               <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                <p class="text-gray-700 mb-2">
+                <p class="text-gray-700 mb-2 font-medium">
                   Quel agent économique a pour rôle principal la consommation?
                 </p>
                 <div class="space-y-2">
                   <div class="flex items-center">
-                    <input type="radio" id="q1a" name="quiz1" class="mr-2" />
+                    <input
+                      type="radio"
+                      id="q1a"
+                      name="quiz1"
+                      value="a"
+                      class="mr-2 quiz-option"
+                    />
                     <label for="q1a" class="text-gray-700"
                       >Les entreprises</label
                     >
                   </div>
                   <div class="flex items-center">
-                    <input type="radio" id="q1b" name="quiz1" class="mr-2" />
+                    <input
+                      type="radio"
+                      id="q1b"
+                      name="quiz1"
+                      value="b"
+                      class="mr-2 quiz-option"
+                    />
                     <label for="q1b" class="text-gray-700">Les ménages</label>
                   </div>
                   <div class="flex items-center">
-                    <input type="radio" id="q1c" name="quiz1" class="mr-2" />
+                    <input
+                      type="radio"
+                      id="q1c"
+                      name="quiz1"
+                      value="c"
+                      class="mr-2 quiz-option"
+                    />
                     <label for="q1c" class="text-gray-700">Les banques</label>
                   </div>
                 </div>
+                <div id="result1" class="mt-2 text-sm font-medium hidden"></div>
               </div>
+
+              <!-- Question 2 -->
+              <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                <p class="text-gray-700 mb-2 font-medium">
+                  Quel agent économique est responsable du financement de
+                  l'économie?
+                </p>
+                <div class="space-y-2">
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      id="q2a"
+                      name="quiz2"
+                      value="a"
+                      class="mr-2 quiz-option"
+                    />
+                    <label for="q2a" class="text-gray-700"
+                      >Les administrations publiques</label
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      id="q2b"
+                      name="quiz2"
+                      value="b"
+                      class="mr-2 quiz-option"
+                    />
+                    <label for="q2b" class="text-gray-700">Les banques</label>
+                  </div>
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      id="q2c"
+                      name="quiz2"
+                      value="c"
+                      class="mr-2 quiz-option"
+                    />
+                    <label for="q2c" class="text-gray-700"
+                      >Les entreprises</label
+                    >
+                  </div>
+                </div>
+                <div id="result2" class="mt-2 text-sm font-medium hidden"></div>
+              </div>
+
+              <!-- Question 3 -->
+              <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                <p class="text-gray-700 mb-2 font-medium">
+                  Quel type de flux concerne la circulation de biens et
+                  services?
+                </p>
+                <div class="space-y-2">
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      id="q3a"
+                      name="quiz3"
+                      value="a"
+                      class="mr-2 quiz-option"
+                    />
+                    <label for="q3a" class="text-gray-700"
+                      >Flux monétaire</label
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      id="q3b"
+                      name="quiz3"
+                      value="b"
+                      class="mr-2 quiz-option"
+                    />
+                    <label for="q3b" class="text-gray-700">Flux réel</label>
+                  </div>
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      id="q3c"
+                      name="quiz3"
+                      value="c"
+                      class="mr-2 quiz-option"
+                    />
+                    <label for="q3c" class="text-gray-700"
+                      >Flux financier</label
+                    >
+                  </div>
+                </div>
+                <div id="result3" class="mt-2 text-sm font-medium hidden"></div>
+              </div>
+
               <button
+                id="checkQuiz"
                 class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors"
               >
                 Vérifier les réponses
+              </button>
+              <button
+                id="resetQuiz"
+                class="w-full bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-lg transition-colors mt-2 hidden"
+              >
+                Réinitialiser le quiz
               </button>
             </div>
           </div>
         </div>
       </div>
     </main>
+
+    <script>
+      // Réponses correctes pour le chapitre 1
+      const correctAnswers = {
+        quiz1: "b", // Les ménages
+        quiz2: "b", // Les banques
+        quiz3: "b", // Flux réel
+      };
+
+      // Éléments DOM - CORRECTION : Le bouton n'avait pas le bon ID
+      const checkButton = document.querySelector("button");
+      const quizOptions = document.querySelectorAll(".quiz-option");
+
+      // Créer le bouton reset s'il n'existe pas
+      let resetButton = document.getElementById("resetQuiz");
+      if (!resetButton) {
+        // Ajouter le bouton reset après le bouton check
+        const buttonContainer = document.querySelector("button").parentNode;
+        resetButton = document.createElement("button");
+        resetButton.id = "resetQuiz";
+        resetButton.textContent = "Réinitialiser le quiz";
+        resetButton.className =
+          "w-full bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-lg transition-colors mt-2 hidden";
+        buttonContainer.appendChild(resetButton);
+      }
+
+      // Vérifier les réponses
+      checkButton.addEventListener("click", function () {
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        // Vérifier chaque question
+        for (let i = 1; i <= totalQuestions; i++) {
+          const questionName = `quiz${i}`;
+          const selectedOption = document.querySelector(
+            `input[name="${questionName}"]:checked`
+          );
+          const resultElement = document.getElementById(`result${i}`);
+
+          if (selectedOption) {
+            if (selectedOption.value === correctAnswers[questionName]) {
+              resultElement.textContent = "✓ Correct!";
+              resultElement.className =
+                "mt-2 text-sm font-medium text-green-600";
+              score++;
+            } else {
+              resultElement.textContent = "✗ Incorrect. Essayez encore!";
+              resultElement.className = "mt-2 text-sm font-medium text-red-600";
+            }
+            resultElement.classList.remove("hidden");
+          } else {
+            const resultElement = document.getElementById(`result${i}`);
+            resultElement.textContent = "Veuillez sélectionner une réponse";
+            resultElement.className =
+              "mt-2 text-sm font-medium text-yellow-600";
+            resultElement.classList.remove("hidden");
+          }
+        }
+
+        // Afficher le score
+        const scoreElement = document.createElement("div");
+        scoreElement.id = "score";
+        scoreElement.className = "mt-4 p-3 rounded-lg text-center font-bold";
+
+        if (score === totalQuestions) {
+          scoreElement.textContent = `Félicitations! ${score}/${totalQuestions} réponses correctes!`;
+          scoreElement.classList.add("bg-green-100", "text-green-700");
+        } else if (score >= totalQuestions / 2) {
+          scoreElement.textContent = `Pas mal! ${score}/${totalQuestions} réponses correctes.`;
+          scoreElement.classList.add("bg-yellow-100", "text-yellow-700");
+        } else {
+          scoreElement.textContent = `Continuez à réviser! ${score}/${totalQuestions} réponses correctes.`;
+          scoreElement.classList.add("bg-red-100", "text-red-700");
+        }
+
+        // Supprimer l'ancien score s'il existe
+        const oldScore = document.getElementById("score");
+        if (oldScore) {
+          oldScore.remove();
+        }
+
+        checkButton.parentNode.appendChild(scoreElement);
+
+        // Afficher le bouton de réinitialisation
+        resetButton.classList.remove("hidden");
+        checkButton.disabled = true;
+      });
+
+      // Réinitialiser le quiz
+      resetButton.addEventListener("click", function () {
+        // Réinitialiser les sélections
+        quizOptions.forEach((option) => {
+          option.checked = false;
+        });
+
+        // Cacher les résultats
+        for (let i = 1; i <= Object.keys(correctAnswers).length; i++) {
+          const resultElement = document.getElementById(`result${i}`);
+          if (resultElement) {
+            resultElement.classList.add("hidden");
+          }
+        }
+
+        // Supprimer le score
+        const scoreElement = document.getElementById("score");
+        if (scoreElement) {
+          scoreElement.remove();
+        }
+
+        // Cacher le bouton de réinitialisation et réactiver le bouton de vérification
+        resetButton.classList.add("hidden");
+        checkButton.disabled = false;
+      });
+
+      // Permettre de vérifier la réponse immédiatement après sélection
+      quizOptions.forEach((option) => {
+        option.addEventListener("change", function () {
+          // Si le quiz n'a pas encore été vérifié, on ne fait rien
+          if (!checkButton.disabled) return;
+
+          const questionName = this.name;
+          const questionNumber = questionName.replace("quiz", "");
+          const resultElement = document.getElementById(
+            `result${questionNumber}`
+          );
+
+          if (this.value === correctAnswers[questionName]) {
+            resultElement.textContent = "✓ Correct!";
+            resultElement.className = "mt-2 text-sm font-medium text-green-600";
+          } else {
+            resultElement.textContent = "✗ Incorrect. Essayez encore!";
+            resultElement.className = "mt-2 text-sm font-medium text-red-600";
+          }
+          resultElement.classList.remove("hidden");
+        });
+      });
+    </script>
   </body>
 </html>
