@@ -183,7 +183,7 @@
               <div
                 class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
               >
-                <i class="fas fa-function"></i>
+                <i class="fas fa-superscript"></i>
               </div>
               <h2 class="text-2xl font-bold text-gray-800">
                 Fonctions de référence
@@ -931,7 +931,7 @@
               <div
                 class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
               >
-                <i class="fas fa-integral"></i>
+                <i class="fas fa-prescription"></i>
               </div>
               <h2 class="text-2xl font-bold text-gray-800">
                 Primitives et intégrales
@@ -1052,90 +1052,94 @@
               </div>
             </div>
           </section>
+
+          <!-- Ensemble -->
+          <section class="bg-white rounded-xl shadow-md p-6 mb-8 mt-8">
+            <div class="flex items-center mb-6">
+              <div
+                class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-record-vinyl"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-800">Ensemble</h2>
+            </div>
+
+            <!-- Ensemble -->
+            <div class="mb-6">
+              <h3 class="text-xl font-semibold text-gray-700 mb-4">
+                Application d'un ensemble E dans un ensemble F
+              </h3>
+              <div
+                class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg"
+              >
+                <div class="text-center text-lg font-mono">
+                  <h1>INJECTION</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">
+                  Tout les éléments de F a au maximum 1 antécédent dans E
+                </p>
+              </div>
+              <div
+                class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg mt-2"
+              >
+                <div class="text-center text-lg font-mono">
+                  <h1>SURJECTION</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">
+                  Tout les éléments de F a au moins 1 antécédent dans E
+                </p>
+              </div>
+              <div
+                class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mt-2"
+              >
+                <div class="text-center text-lg font-mono">
+                  <h1>BIJECTION</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">
+                  Tout éléments de F a exactement 1 antécédent dans E
+                </p>
+              </div>
+            </div>
+
+            <!-- Arbre de probabilités -->
+            <div>
+              <h3 class="text-xl font-semibold text-gray-700 mb-4">Ensemble</h3>
+              <div class="bg-gray-100 p-6 rounded-lg">
+                <img
+                  src="https://ds055uzetaobb.cloudfront.net/brioche/uploads/EkswlzPrzb-examp.svg?width=300"
+                  alt=""
+                  class="flex center justify-center items-center"
+                />
+              </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg border border-gray-200 mt-6">
+              <h4 class="font-semibold text-gray-700 mb-2">
+                Fonctions composées
+              </h4>
+              <div class="text-center text-lg bg-gray-100 p-3 rounded mb-3">
+                - Lorsqu'on a deux fonctions f et g, la fonction g o f est la
+                fonction définie par g o f(x) = g[f(x)]. <br />
+                - C'est l'application de f dans g (on remplace les x de la
+                fonction g par la fonction f)
+              </div>
+              <p class="text-sm text-gray-600">Lire "g rond f"</p>
+            </div>
+
+            <div
+              class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6 mt-6"
+            >
+              <div class="text-center text-lg font-mono">g°f(x) = ln(5x)</div>
+              <p class="text-sm text-gray-600 mt-2">
+                Où f(x) = 5x et g(x) = ln(x)
+              </p>
+            </div>
+          </section>
         </div>
 
         <!-- Barre latérale -->
         <div class="lg:w-1/3">
           <div class="sticky top-8">
-            <!-- Navigation -->
-            <div class="bg-white rounded-xl shadow-md p-6 mb-6">
-              <h3 class="text-lg font-bold text-gray-800 mb-4">Navigation</h3>
-              <ul class="space-y-2">
-                <li>
-                  <a
-                    href="#probabilites"
-                    class="flex items-center text-blue-600 hover:text-blue-800"
-                  >
-                    <i class="fas fa-chevron-right mr-2 text-sm"></i>
-                    Probabilités
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#fonctions"
-                    class="flex items-center text-blue-600 hover:text-blue-800"
-                  >
-                    <i class="fas fa-chevron-right mr-2 text-sm"></i>
-                    Fonctions
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#derivees"
-                    class="flex items-center text-blue-600 hover:text-blue-800"
-                  >
-                    <i class="fas fa-chevron-right mr-2 text-sm"></i>
-                    Dérivées
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#suites"
-                    class="flex items-center text-blue-600 hover:text-blue-800"
-                  >
-                    <i class="fas fa-chevron-right mr-2 text-sm"></i>
-                    Suites
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#progression"
-                    class="flex items-center text-blue-600 hover:text-blue-800"
-                  >
-                    <i class="fas fa-chevron-right mr-2 text-sm"></i>
-                    Progression linéaire
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#binomiale"
-                    class="flex items-center text-blue-600 hover:text-blue-800"
-                  >
-                    <i class="fas fa-chevron-right mr-2 text-sm"></i>
-                    Loi binomiale
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#uniforme"
-                    class="flex items-center text-blue-600 hover:text-blue-800"
-                  >
-                    <i class="fas fa-chevron-right mr-2 text-sm"></i>
-                    Loi uniforme
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#primitives"
-                    class="flex items-center text-blue-600 hover:text-blue-800"
-                  >
-                    <i class="fas fa-chevron-right mr-2 text-sm"></i>
-                    Primitives
-                  </a>
-                </li>
-              </ul>
-            </div>
-
             <!-- Formules importantes -->
             <div class="bg-white rounded-xl shadow-md p-6 mb-6">
               <h3 class="text-lg font-bold text-gray-800 mb-4">
