@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTS SIO - Mathématiques MI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-50">
+    <!-- En-tête -->
+    <header
+      class="bg-gradient-to-r from-purple-900 to-indigo-800 text-white shadow-lg"
+    >
+      <div class="container mx-auto px-4 py-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center space-x-3 mb-4 md:mb-0">
+            <i class="fas fa-square-root-alt text-3xl"></i>
+            <div>
+              <h1 class="text-2xl font-bold">BTS SIO - Mathématiques MI</h1>
+            </div>
+          </div>
+          <nav class="flex space-x-6">
+            <a href="index.html" class="hover:text-purple-300 transition-colors"
+              >Accueil</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="container mx-auto px-4 py-8">
+      <!-- Introduction -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">
+          Mathématiques pour l'informatique (MI)
+        </h1>
+        <p class="text-gray-600">
+          Tous les concepts clés pour réussir l'épreuve de maths MI du BTS SIO.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Contenu principal - 2/3 de la largeur -->
+        <div class="lg:col-span-2 space-y-8">
+          <!-- SECTION 1: Congruences -->
+          <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-divide"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-800">1. Congruences</h2>
+            </div>
+
+            <div class="space-y-4">
+              <div class="bg-purple-50 border-l-4 border-purple-500 p-4">
+                <h3 class="font-bold text-purple-700 mb-2">📐 Définition :</h3>
+                <p class="text-gray-700">
+                  a ≡ b [n] signifie que a et b ont le même reste dans la
+                  division par n.
+                </p>
+                <p class="text-gray-600 mt-2">
+                  b est le reste dans la division de a par n
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 2: Conversions de bases -->
+          <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-exchange-alt"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-800">
+                2. Conversions entre bases
+              </h2>
+            </div>
+
+            <div class="space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Décimal → Binaire -->
+                <div class="border rounded-lg p-4">
+                  <h3 class="font-bold text-blue-700 mb-2">
+                    🔢 Décimal → Binaire
+                  </h3>
+                  <p class="text-sm text-gray-600 mb-2">
+                    Division par 2 successive :
+                  </p>
+                  <div class="bg-gray-100 p-3 rounded font-mono text-sm">
+                    1-2-4-8-16-32-64-128-256-512...<br />
+                    Ex : 40 = 000101<br />
+                    <span class="font-bold mt-2 block"
+                      >Attention : Inverser le résultat donc 40 = 101000</span
+                    ><br />
+
+                    Pour les virgules on multiplie successivement par 2 et on
+                    prend la partie entière : 0,52 × 2 = 1,04 → on garde le 1,
+                    on continue avec 0,04
+                  </div>
+                </div>
+
+                <!-- Binaire → Décimal -->
+                <div class="border rounded-lg p-4">
+                  <h3 class="font-bold text-blue-700 mb-2">
+                    🔢 Binaire → Exadécimal
+                  </h3>
+                  <p class="text-sm text-gray-600 mb-2">Regroupe par 4</p>
+                  <div class="bg-gray-100 p-3 rounded font-mono text-sm">
+                    1 0 1 0 1 0 0 1<br />
+                    1010 1001<br />
+                    = 10 9<br />
+                    <span class="font-bold mt-2 block">= A9</span><br /><br />
+                    Inversement pour Exa to Bin
+                  </div>
+                </div>
+
+                <!-- Décimal → Hexa -->
+                <div class="border rounded-lg p-4">
+                  <h3 class="font-bold text-blue-700 mb-2">
+                    🔢 Décimal → Hexadécimal
+                  </h3>
+                  <div class="bg-gray-100 p-3 rounded font-mono text-sm">
+                    255 ÷ 16 = 15 reste
+                    <span class="text-red-600 font-bold">15 (F)</span><br />
+                    15 ÷ 16 = 0 reste
+                    <span class="text-red-600 font-bold">15 (F)</span><br />
+                    <span class="font-bold mt-2 block">255₁₀ = FF₁₆</span><br />
+                    Pour les virgules on multiplie successivement par 16 et on
+                    prend la partie entière : 0,52 × 16 = 8,32 → on garde le 8,
+                    on continue avec 0,32
+                  </div>
+                </div>
+
+                <!-- Hexa → Décimal -->
+                <div class="border rounded-lg p-4">
+                  <h3 class="font-bold text-blue-700 mb-2">
+                    🔢 Hexadécimal → Décimal
+                  </h3>
+                  <div class="bg-gray-100 p-3 rounded font-mono text-sm">
+                    A3₁₆ = 10×16¹ + 3×16⁰<br />
+                    = 160 + 3<br />
+                    <span class="font-bold mt-2 block">A3₁₆ = 163₁₀</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-green-50 p-4 rounded-lg">
+                <h4 class="font-bold text-green-700 mb-2">
+                  📊 Tableau récapitulatif :
+                </h4>
+                <table class="min-w-full bg-white border">
+                  <thead>
+                    <tr class="bg-gray-100">
+                      <th class="px-4 py-2 border">Décimal</th>
+                      <th class="px-4 py-2 border">Binaire</th>
+                      <th class="px-4 py-2 border">Hexa</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="px-4 py-2 border">0</td>
+                      <td class="px-4 py-2 border">0000</td>
+                      <td class="px-4 py-2 border">0</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-2 border">1</td>
+                      <td class="px-4 py-2 border">0001</td>
+                      <td class="px-4 py-2 border">1</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-2 border">2</td>
+                      <td class="px-4 py-2 border">0010</td>
+                      <td class="px-4 py-2 border">2</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-2 border">9</td>
+                      <td class="px-4 py-2 border">1001</td>
+                      <td class="px-4 py-2 border">9</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-2 border">10</td>
+                      <td class="px-4 py-2 border">1010</td>
+                      <td class="px-4 py-2 border">A</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-2 border">15</td>
+                      <td class="px-4 py-2 border">1111</td>
+                      <td class="px-4 py-2 border">F</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 3: Ensembles (Intersection, Union) -->
+          <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-circle-notch"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-800">
+                3. Opérations sur les ensembles
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Intersection -->
+              <div class="border-2 border-blue-200 rounded-lg p-4">
+                <h3 class="font-bold text-blue-700 mb-3 text-center">
+                  ∩ INTERSECTION (ET)
+                </h3>
+                <div class="flex justify-center mb-3">
+                  <div class="relative w-32 h-32">
+                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                      <circle
+                        cx="35"
+                        cy="50"
+                        r="25"
+                        fill="none"
+                        stroke="blue"
+                        stroke-width="2"
+                      />
+                      <circle
+                        cx="65"
+                        cy="50"
+                        r="25"
+                        fill="none"
+                        stroke="blue"
+                        stroke-width="2"
+                      />
+                      <path
+                        d="M35 50 Q50 65 65 50"
+                        fill="blue"
+                        fill-opacity="0.3"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-center font-mono">A ∩ B = {x | x∈A et x∈B}</p>
+                <p class="text-sm text-gray-600 mt-2">
+                  Ex: A={1,2,3} B={2,3,4} ⇒ A∩B={2,3}
+                </p>
+              </div>
+
+              <!-- Union -->
+              <div class="border-2 border-green-200 rounded-lg p-4">
+                <h3 class="font-bold text-green-700 mb-3 text-center">
+                  ∪ UNION (OU)
+                </h3>
+                <div class="flex justify-center mb-3">
+                  <div class="relative w-32 h-32">
+                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                      <circle
+                        cx="35"
+                        cy="50"
+                        r="25"
+                        fill="green"
+                        fill-opacity="0.3"
+                      />
+                      <circle
+                        cx="65"
+                        cy="50"
+                        r="25"
+                        fill="green"
+                        fill-opacity="0.3"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-center font-mono">A ∪ B = {x | x∈A ou x∈B}</p>
+                <p class="text-sm text-gray-600 mt-2">
+                  Ex: A={1,2,3} B={2,3,4} ⇒ A∪B={1,2,3,4}
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 4: Injection, Surjection, Bijection -->
+          <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-arrow-right"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-800">
+                4. Applications : Injection, Surjection, Bijection
+              </h2>
+            </div>
+            <!-- Ensemble -->
+            <div class="mb-6">
+              <h3 class="text-xl font-semibold text-gray-700 mb-4">
+                Application d'un ensemble E dans un ensemble F
+              </h3>
+              <div
+                class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg"
+              >
+                <div class="text-center text-lg font-mono">
+                  <h1>INJECTION</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">
+                  Tout les éléments de F a au maximum 1 antécédent dans E
+                </p>
+              </div>
+              <div
+                class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg mt-2"
+              >
+                <div class="text-center text-lg font-mono">
+                  <h1>SURJECTION</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">
+                  Tout les éléments de F a au moins 1 antécédent dans E
+                </p>
+              </div>
+              <div
+                class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mt-2"
+              >
+                <div class="text-center text-lg font-mono">
+                  <h1>BIJECTION</h1>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">
+                  Tout éléments de F a exactement 1 antécédent dans E
+                </p>
+              </div>
+              <div class="m-6">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                  <img
+                    src="https://ds055uzetaobb.cloudfront.net/brioche/uploads/EkswlzPrzb-examp.svg?width=300"
+                    alt=""
+                    class="flex center justify-center items-center"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 5: Prédicats (∀, ∃) -->
+          <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="bg-yellow-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-code"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-800">
+                5. Prédicats et Quantificateurs
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h3 class="font-bold text-blue-700 mb-2">
+                  ∀ POUR TOUT (Quantificateur universel)
+                </h3>
+                <p class="text-gray-700">
+                  ∀x ∈ E, P(x) signifie que la propriété P est vraie pour tous
+                  les éléments de E.
+                </p>
+                <p class="text-sm text-gray-600 mt-2">
+                  Exemple: ∀n ∈ ℕ, n² ≥ 0 (tous les carrés sont positifs)
+                </p>
+              </div>
+
+              <div class="bg-green-50 p-4 rounded-lg">
+                <h3 class="font-bold text-green-700 mb-2">
+                  ∃ IL EXISTE (Quantificateur existentiel)
+                </h3>
+                <p class="text-gray-700">
+                  ∃x ∈ E, P(x) signifie qu'il existe au moins un élément de E
+                  vérifiant P.
+                </p>
+                <p class="text-sm text-gray-600 mt-2">
+                  Exemple: ∃x ∈ ℝ, x² = 4 (il existe un nombre dont le carré
+                  vaut 4)
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 6: Table de vérité -->
+          <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-table"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-800">
+                6. Tables de vérité
+              </h2>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="min-w-full bg-white border-2 border-gray-300">
+                <thead>
+                  <tr class="bg-gray-100">
+                    <th class="px-4 py-2 border" colspan="2">Valeurs</th>
+                    <th class="px-4 py-2 border">ET (∧)</th>
+                    <th class="px-4 py-2 border">OU (∨)</th>
+                    <th class="px-4 py-2 border">NON (¬)</th>
+                    <th class="px-4 py-2 border">⇒ (implication)</th>
+                    <th class="px-4 py-2 border">⇔ (équivalence)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center" rowspan="2">
+                      ¬0=1
+                    </td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center" rowspan="2">
+                      ¬1=0
+                    </td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                    <td class="px-4 py-2 border text-center">0</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                    <td class="px-4 py-2 border text-center">1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="mt-4 grid grid-cols-2 gap-4">
+              <div class="bg-yellow-50 p-3 rounded">
+                <h4 class="font-bold">Lois commutatives :</h4>
+                <p>P ∧ Q ⇔ Q ∧ P</p>
+                <p>P ∨ Q ⇔ Q ∨ P</p>
+              </div>
+              <div class="bg-yellow-50 p-3 rounded">
+                <h4 class="font-bold">Lois de De Morgan :</h4>
+                <p>¬(P ∧ Q) ⇔ ¬P ∨ ¬Q</p>
+                <p>¬(P ∨ Q) ⇔ ¬P ∧ ¬Q</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 7: Calcul matriciel -->
+          <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="bg-pink-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-th"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-800">
+                7. Calcul matriciel
+              </h2>
+            </div>
+
+            <div class="space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h3 class="font-bold mb-2">Addition :</h3>
+                  <div class="bg-gray-100 p-3 rounded font-mono text-center">
+                    [1 2] [5 6] [6 8]<br />
+                    [3 4] + [7 8] = [10 12]
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-bold mb-2">Multiplication :</h3>
+                  <div
+                    class="bg-gray-100 p-3 rounded font-mono text-center text-sm"
+                  >
+                    [1 2] [5 6] [1×5+2×7 = 19, 1×6+2×8 = 22]<br />
+                    [3 4] × [7 8] = [3×5+4×7 = 43, 3×6+4×8 = 50]
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h4 class="font-bold text-blue-700 mb-2">
+                  📌 Règles importantes :
+                </h4>
+                <ul class="list-disc list-inside">
+                  <li>Pour multiplier: (lignes de A) × (colonnes de B)</li>
+                  <li>Dimension: A(m×n) × B(n×p) = C(m×p)</li>
+                  <li>La multiplication n'est pas commutative: A×B ≠ B×A</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 8: Graphes orientés -->
+          <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="bg-teal-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-800">
+                8. Graphes orientés
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <svg width="200" height="150" viewBox="0 0 200 150">
+                  <!-- Sommets -->
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="20"
+                    fill="lightblue"
+                    stroke="blue"
+                    stroke-width="2"
+                  />
+                  <text x="45" y="55" font-size="12">A</text>
+                  <circle
+                    cx="150"
+                    cy="50"
+                    r="20"
+                    fill="lightblue"
+                    stroke="blue"
+                    stroke-width="2"
+                  />
+                  <text x="145" y="55" font-size="12">B</text>
+                  <circle
+                    cx="100"
+                    cy="120"
+                    r="20"
+                    fill="lightblue"
+                    stroke="blue"
+                    stroke-width="2"
+                  />
+                  <text x="95" y="125" font-size="12">C</text>
+
+                  <!-- Arêtes pondérées -->
+                  <line
+                    x1="70"
+                    y1="50"
+                    x2="130"
+                    y2="50"
+                    stroke="black"
+                    stroke-width="2"
+                    marker-end="url(#arrow)"
+                  />
+                  <text x="100" y="40" font-size="10" fill="red">5</text>
+                  <line
+                    x1="130"
+                    y1="60"
+                    x2="110"
+                    y2="110"
+                    stroke="black"
+                    stroke-width="2"
+                    marker-end="url(#arrow)"
+                  />
+                  <text x="140" y="85" font-size="10" fill="red">3</text>
+                  <line
+                    x1="90"
+                    y1="110"
+                    x2="60"
+                    y2="70"
+                    stroke="black"
+                    stroke-width="2"
+                    marker-end="url(#arrow)"
+                  />
+                  <text x="70" y="100" font-size="10" fill="red">2</text>
+                </svg>
+              </div>
+
+              <div>
+                <h3 class="font-bold mb-2">Vocabulaire :</h3>
+                <ul class="list-disc list-inside text-sm">
+                  <li>
+                    <span class="font-semibold">Prédécesseurs</span> : sommets
+                    qui pointent vers un sommet
+                  </li>
+                  <li>
+                    <span class="font-semibold">Successeurs</span> : sommets
+                    vers lesquels pointe un sommet
+                  </li>
+                  <li>
+                    <span class="font-semibold">Pondération</span> : poids sur
+                    les arêtes (distances, coûts)
+                  </li>
+                  <li>
+                    <span class="font-semibold">Niveaux</span> : compter le
+                    nombre de prédécésseurs
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 9: Algèbre de Boole et Karnaugh -->
+          <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="bg-orange-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-microchip"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-800">
+                9. Algèbre de Boole et tableaux de Karnaugh
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h3 class="font-bold mb-2">
+                  Tableau de Karnaugh 2 variables :
+                </h3>
+                <table class="border mx-auto">
+                  <tr>
+                    <td class="border p-2"></td>
+                    <td class="border p-2 font-bold">B</td>
+                    <td class="border p-2 font-bold">¬B</td>
+                  </tr>
+                  <tr>
+                    <td class="border p-2 font-bold">A</td>
+                    <td class="border p-2">1</td>
+                    <td class="border p-2">0</td>
+                  </tr>
+                  <tr>
+                    <td class="border p-2 font-bold">¬A</td>
+                    <td class="border p-2">1</td>
+                    <td class="border p-2">1</td>
+                  </tr>
+                </table>
+                <p class="text-sm mt-2">F = A·B + ¬A·B + ¬A·¬B = ¬A + B</p>
+              </div>
+
+              <div>
+                <h3 class="font-bold mb-2">Lois de l'algèbre de Boole :</h3>
+                <ul class="text-sm space-y-1">
+                  <li>Idempotence : A + A = A, A·A = A</li>
+                  <li>Complément : A + ¬A = 1, A·¬A = 0</li>
+                  <li>Absorption : A + A·B = A, A·(A+B) = A</li>
+                  <li>De Morgan : ¬(A+B) = ¬A·¬B, ¬(A·B) = ¬A+¬B</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 10: Relations -->
+          <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="bg-cyan-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-link"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-800">
+                10. Relations binaires
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Propriétés -->
+              <div class="space-y-2">
+                <div class="bg-blue-50 p-2 rounded">
+                  <span class="font-bold">Réflexive :</span> ∀x, xRx
+                </div>
+                <div class="bg-green-50 p-2 rounded">
+                  <span class="font-bold">Symétrique :</span> xRy ⇒ yRx
+                </div>
+                <div class="bg-yellow-50 p-2 rounded">
+                  <span class="font-bold">Antisymétrique :</span> xRy et yRx ⇒
+                  x=y
+                </div>
+                <div class="bg-red-50 p-2 rounded">
+                  <span class="font-bold">Transitive :</span> xRy et yRz ⇒ xRz
+                </div>
+              </div>
+
+              <div>
+                <h3 class="font-bold mb-2">Types de relations :</h3>
+                <div class="bg-purple-50 p-3 rounded">
+                  <p class="font-semibold">Relation d'équivalence :</p>
+                  <p class="text-sm">Réflexive + Symétrique + Transitive</p>
+                  <p class="text-xs mt-1">Ex: ≡ modulo n</p>
+                </div>
+                <div class="bg-orange-50 p-3 rounded mt-2">
+                  <p class="font-semibold">Relation d'ordre :</p>
+                  <p class="text-sm">Réflexive + Antisymétrique + Transitive</p>
+                  <p class="text-xs mt-1">Ex: ≤, ⊆</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Barre latérale -->
+        <div class="space-y-6">
+          <!-- Mini quiz -->
+          <div class="bg-white rounded-xl shadow-md p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">📝 Mini Quiz</h3>
+
+            <div class="space-y-4">
+              <div>
+                <p class="font-medium">1. 42₁₀ en binaire ?</p>
+                <select class="w-full p-2 border rounded mt-1" id="quiz1">
+                  <option value="">Choisissez...</option>
+                  <option value="wrong">110110</option>
+                  <option value="correct">101010</option>
+                  <option value="wrong">101100</option>
+                </select>
+              </div>
+
+              <div>
+                <p class="font-medium">2. ¬(P ∧ Q) équivaut à ?</p>
+                <select class="w-full p-2 border rounded mt-1" id="quiz2">
+                  <option value="">Choisissez...</option>
+                  <option value="wrong">¬P ∧ ¬Q</option>
+                  <option value="correct">¬P ∨ ¬Q</option>
+                  <option value="wrong">P ∨ Q</option>
+                </select>
+              </div>
+
+              <div>
+                <p class="font-medium">3. Une relation d'équivalence est :</p>
+                <select class="w-full p-2 border rounded mt-1" id="quiz3">
+                  <option value="">Choisissez...</option>
+                  <option value="wrong">Réflexive + transitive</option>
+                  <option value="correct">
+                    Réflexive + symétrique + transitive
+                  </option>
+                  <option value="wrong">Symétrique + antisymétrique</option>
+                </select>
+              </div>
+
+              <button
+                onclick="checkQuiz()"
+                class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700"
+              >
+                Vérifier
+              </button>
+
+              <div id="quizResult" class="hidden p-3 rounded-lg"></div>
+            </div>
+          </div>
+
+          <!-- Notations importantes -->
+          <div class="bg-white rounded-xl shadow-md p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">🔣 Notations</h3>
+            <div class="grid grid-cols-2 gap-2 text-center">
+              <div class="bg-gray-100 p-2 rounded">ℕ : entiers naturels</div>
+              <div class="bg-gray-100 p-2 rounded">ℤ : entiers relatifs</div>
+              <div class="bg-gray-100 p-2 rounded">ℝ : réels</div>
+              <div class="bg-gray-100 p-2 rounded">∅ : ensemble vide</div>
+              <div class="bg-gray-100 p-2 rounded">∈ : appartient</div>
+              <div class="bg-gray-100 p-2 rounded">⊂ : sous-ensemble</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function checkQuiz() {
+        const answers = {
+          quiz1: "correct",
+          quiz2: "correct",
+          quiz3: "correct",
+        };
+
+        let score = 0;
+        let total = 3;
+
+        for (let i = 1; i <= total; i++) {
+          const select = document.getElementById(`quiz${i}`);
+          if (select && select.value === answers[`quiz${i}`]) {
+            score++;
+          }
+        }
+
+        const resultDiv = document.getElementById("quizResult");
+        resultDiv.classList.remove("hidden");
+
+        if (score === total) {
+          resultDiv.className = "p-3 rounded-lg bg-green-100 text-green-700";
+          resultDiv.textContent = "✅ Parfait !";
+        } else if (score >= 2) {
+          resultDiv.className = "p-3 rounded-lg bg-yellow-100 text-yellow-700";
+          resultDiv.textContent = `⚠️ ${score}/${total} correct`;
+        } else {
+          resultDiv.className = "p-3 rounded-lg bg-red-100 text-red-700";
+          resultDiv.textContent = `❌ ${score}/${total} correct`;
+        }
+      }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12 py-6">
+      <div class="container mx-auto px-4 text-center">
+        <p>Révision BTS SIO - Mathématiques MI</p>
+        <p class="text-sm text-gray-400 mt-2">
+          Tous les concepts clés pour l'épreuve
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

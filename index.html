@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -8,7 +8,9 @@
 
     <style>
       .skill-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
         transform-origin: center;
         backface-visibility: hidden;
       }
@@ -73,6 +75,11 @@
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
           lien: "https://langstack.netlify.app/",
         },
+        {
+          name: "Méthodologie",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitbook/gitbook-original.svg",
+          lien: "/methodologie.html",
+        },
       ];
 
       const grid = document.getElementById("skillsGrid");
@@ -97,7 +104,7 @@
         grid.innerHTML = "";
 
         const filtered = skills.filter(
-          (s) => category === "all" || s.category === category
+          (s) => category === "all" || s.category === category,
         );
 
         if (filtered.length === 0) {
@@ -133,7 +140,7 @@
 
       // make first button active on load
       const firstBtn = document.querySelector(
-        '.filter-btn[data-category="all"]'
+        '.filter-btn[data-category="all"]',
       );
       if (firstBtn) firstBtn.classList.add("active");
     </script>

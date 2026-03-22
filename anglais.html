@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -21,6 +21,13 @@
       .category-icon:hover {
         transform: scale(1.1);
       }
+      .lesson-card {
+        transition: all 0.3s ease;
+      }
+      .lesson-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
     </style>
   </head>
   <body class="bg-gray-50">
@@ -40,9 +47,6 @@
           <nav class="flex space-x-6">
             <a href="index.html" class="hover:text-blue-300 transition-colors"
               >Accueil</a
-            >
-            <a href="cejm.html" class="hover:text-blue-300 transition-colors"
-              >CEJM</a
             >
           </nav>
         </div>
@@ -93,11 +97,11 @@
         </div>
       </div>
 
-      <!-- Catégories -->
+      <!-- Catégories avec leçons -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         <!-- IoT -->
         <div
-          class="bg-white rounded-xl shadow-md p-6 category-card"
+          class="bg-white rounded-xl shadow-md p-6 category-card cursor-pointer"
           data-category="iot"
         >
           <div class="flex items-center mb-4">
@@ -111,16 +115,20 @@
           <p class="text-gray-600 mb-4">
             Termes relatifs à l'Internet des Objets et aux appareils connectés
           </p>
-          <div class="text-sm text-gray-500">
-            <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded"
+          <div class="flex justify-between items-center">
+            <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded text-sm"
               >12 termes</span
             >
+            <span class="text-xs text-gray-400 flex items-center">
+              <i class="fas fa-graduation-cap mr-1"></i>
+              Leçon disponible
+            </span>
           </div>
         </div>
 
         <!-- BYOD -->
         <div
-          class="bg-white rounded-xl shadow-md p-6 category-card"
+          class="bg-white rounded-xl shadow-md p-6 category-card cursor-pointer"
           data-category="byod"
         >
           <div class="flex items-center mb-4">
@@ -132,16 +140,20 @@
           <p class="text-gray-600 mb-4">
             Appareils personnels et gestion mobile en entreprise
           </p>
-          <div class="text-sm text-gray-500">
-            <span class="bg-green-50 text-green-700 px-2 py-1 rounded"
+          <div class="flex justify-between items-center">
+            <span class="bg-green-50 text-green-700 px-2 py-1 rounded text-sm"
               >11 termes</span
             >
+            <span class="text-xs text-gray-400 flex items-center">
+              <i class="fas fa-graduation-cap mr-1"></i>
+              Leçon disponible
+            </span>
           </div>
         </div>
 
         <!-- IA -->
         <div
-          class="bg-white rounded-xl shadow-md p-6 category-card"
+          class="bg-white rounded-xl shadow-md p-6 category-card cursor-pointer"
           data-category="ia"
         >
           <div class="flex items-center mb-4">
@@ -155,16 +167,20 @@
           <p class="text-gray-600 mb-4">
             Machine learning, deep learning et automatisation
           </p>
-          <div class="text-sm text-gray-500">
-            <span class="bg-purple-50 text-purple-700 px-2 py-1 rounded"
+          <div class="flex justify-between items-center">
+            <span class="bg-purple-50 text-purple-700 px-2 py-1 rounded text-sm"
               >10 termes</span
             >
+            <span class="text-xs text-gray-400 flex items-center">
+              <i class="fas fa-graduation-cap mr-1"></i>
+              Leçon disponible
+            </span>
           </div>
         </div>
 
         <!-- Motivation -->
         <div
-          class="bg-white rounded-xl shadow-md p-6 category-card"
+          class="bg-white rounded-xl shadow-md p-6 category-card cursor-pointer"
           data-category="motivation"
         >
           <div class="flex items-center mb-4">
@@ -178,16 +194,20 @@
           <p class="text-gray-600 mb-4">
             Culture d'entreprise et qualité de vie au travail
           </p>
-          <div class="text-sm text-gray-500">
-            <span class="bg-yellow-50 text-yellow-700 px-2 py-1 rounded"
+          <div class="flex justify-between items-center">
+            <span class="bg-yellow-50 text-yellow-700 px-2 py-1 rounded text-sm"
               >11 termes</span
             >
+            <span class="text-xs text-gray-400 flex items-center">
+              <i class="fas fa-graduation-cap mr-1"></i>
+              Leçon disponible
+            </span>
           </div>
         </div>
 
         <!-- Cybersecurity -->
         <div
-          class="bg-white rounded-xl shadow-md p-6 category-card"
+          class="bg-white rounded-xl shadow-md p-6 category-card cursor-pointer"
           data-category="cybersecurity"
         >
           <div class="flex items-center mb-4">
@@ -199,16 +219,20 @@
           <p class="text-gray-600 mb-4">
             Protection des systèmes et données informatiques
           </p>
-          <div class="text-sm text-gray-500">
-            <span class="bg-red-50 text-red-700 px-2 py-1 rounded"
+          <div class="flex justify-between items-center">
+            <span class="bg-red-50 text-red-700 px-2 py-1 rounded text-sm"
               >10 termes</span
             >
+            <span class="text-xs text-gray-400 flex items-center">
+              <i class="fas fa-graduation-cap mr-1"></i>
+              Leçon disponible
+            </span>
           </div>
         </div>
 
         <!-- Cloud -->
         <div
-          class="bg-white rounded-xl shadow-md p-6 category-card"
+          class="bg-white rounded-xl shadow-md p-6 category-card cursor-pointer"
           data-category="cloud"
         >
           <div class="flex items-center mb-4">
@@ -220,22 +244,45 @@
           <p class="text-gray-600 mb-4">
             Virtualisation et services informatiques dématérialisés
           </p>
-          <div class="text-sm text-gray-500">
-            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded"
+          <div class="flex justify-between items-center">
+            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-sm"
               >10 termes</span
             >
+            <span class="text-xs text-gray-400 flex items-center">
+              <i class="fas fa-graduation-cap mr-1"></i>
+              Leçon disponible
+            </span>
           </div>
         </div>
       </div>
 
-      <!-- Dictionnaire complet -->
+      <!-- Dictionnaire complet avec leçons -->
       <div class="bg-white rounded-xl shadow-md p-6">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">
-          Dictionnaire Complet
-        </h2>
-
         <div id="dictionaryContent">
           <!-- Le contenu sera généré dynamiquement par JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal pour les leçons -->
+    <div
+      id="lessonModal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
+    >
+      <div
+        class="bg-white rounded-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto"
+      >
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h3 id="lessonTitle" class="text-2xl font-bold text-gray-800"></h3>
+            <button
+              id="closeModal"
+              class="text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <i class="fas fa-times text-2xl"></i>
+            </button>
+          </div>
+          <div id="lessonContent" class="prose max-w-none"></div>
         </div>
       </div>
     </div>
@@ -481,6 +528,177 @@
         },
       ];
 
+      // Leçons pour chaque catégorie
+      const lessons = {
+        iot: {
+          title: "Introduction à l'IoT",
+          content: `
+            <div class="space-y-4">
+              <p class="text-gray-700"><strong>Smarthomes</strong> are homes equipped with interconnected home applicances and devices that can interoperate and be controlled remotely. These devices are said to be smart because they can communicate with one another depending on some criteria like temperature, time of the day ect. The core of the system is hub ensuring the interoperability of the devices and making sure they communicate with the same language protocol</p>
+              
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-blue-800 mb-2">📌 Advantages :</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Convenience (Time Saving) : Smarthomes enable you to customize the use of your applicances, so that you can save time</li>
+                  <li>Energy management (Cost Saving) : A smart home can help you decrease you electricity bill</li>
+                  <li>Security : Many system also contribute to enhancing security. They can alert a home owner via a cell phone in case of an intrusion</li>
+                  <li>Risks : Lack of standardization, hacking, need for skills (An IoT installation requires skills)</li>
+                </ul>
+              </div>
+
+              <p class="text-gray-700"><strong>Exemples :</strong> heaters, CCTVs, lights, scheduls, thermostat, motion sensors.</p>
+            </div>
+          `,
+        },
+        byod: {
+          title: "Comprendre le BYOD",
+          content: `
+            <div class="space-y-4">
+              <p class="text-gray-700"><strong>BYOD (Bring Your Own Device)</strong> est une politique d'entreprise permettant aux employés d'utiliser leurs appareils personnels pour le travail.</p>
+              
+              <div class="bg-green-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-green-800 mb-2">✅ Avantages :</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Flexibilité accrue pour les employés</li>
+                  <li>Réduction des coûts matériels pour l'entreprise</li>
+                  <li>Productivité améliorée</li>
+                </ul>
+              </div>
+
+              <div class="bg-red-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-red-800 mb-2">⚠️ Défis :</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Sécurité des données</li>
+                  <li>Gestion des différents appareils et OS</li>
+                  <li>Séparation vie pro/perso</li>
+                </ul>
+              </div>
+
+              <p class="text-gray-700">Des solutions comme MDM (Mobile Device Management) aident à gérer ces défis en contrôlant et sécurisant les appareils.</p>
+            </div>
+          `,
+        },
+        ia: {
+          title: "Fondamentaux de l'IA",
+          content: `
+            <div class="space-y-4">
+              <p class="text-gray-700"><strong>L'Intelligence Artificielle (IA)</strong> simule l'intelligence humaine dans des machines programmées pour penser et apprendre.</p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-purple-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-purple-800 mb-2">🧠 Machine Learning</h4>
+                  <p class="text-gray-700 text-sm">Algorithmes qui apprennent à partir de données</p>
+                </div>
+                <div class="bg-indigo-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-indigo-800 mb-2">🔬 Deep Learning</h4>
+                  <p class="text-gray-700 text-sm">Réseaux de neurones complexes pour tâches avancées</p>
+                </div>
+              </div>
+
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-gray-800 mb-2">Applications courantes :</h4>
+                <ul class="list-disc list-inside text-gray-700">
+                  <li>Reconnaissance faciale et vocale</li>
+                  <li>Recommandations personnalisées (Netflix, Amazon)</li>
+                  <li>Assistants virtuels (Siri, Alexa)</li>
+                  <li>Diagnostics médicaux</li>
+                </ul>
+              </div>
+            </div>
+          `,
+        },
+        motivation: {
+          title: "Motivation et Bien-être au Travail",
+          content: `
+            <div class="space-y-4">
+              <p class="text-gray-700">La <strong>motivation et le bien-être au travail</strong> sont essentiels pour la productivité et la satisfaction des employés.</p>
+              
+              <div class="bg-yellow-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-yellow-800 mb-2">💡 Facteurs clés :</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Reconnaissance et valorisation</li>
+                  <li>Équilibre vie pro/perso</li>
+                  <li>Autonomie et responsabilités</li>
+                  <li>Ambiance de travail positive</li>
+                  <li>Opportunités de développement</li>
+                </ul>
+              </div>
+
+              <p class="text-gray-700">Les entreprises investissent dans ces aspects pour réduire le turnover et améliorer la performance globale.</p>
+            </div>
+          `,
+        },
+        cybersecurity: {
+          title: "Bases de la Cybersécurité",
+          content: `
+            <div class="space-y-4">
+              <p class="text-gray-700">La <strong>cybersécurité</strong> protège les systèmes, réseaux et données contre les attaques numériques.</p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-red-50 p-3 rounded-lg text-center">
+                  <i class="fas fa-lock text-red-600 text-xl mb-2"></i>
+                  <h5 class="font-semibold text-sm">Confidentialité</h5>
+                </div>
+                <div class="bg-blue-50 p-3 rounded-lg text-center">
+                  <i class="fas fa-check-circle text-blue-600 text-xl mb-2"></i>
+                  <h5 class="font-semibold text-sm">Intégrité</h5>
+                </div>
+                <div class="bg-green-50 p-3 rounded-lg text-center">
+                  <i class="fas fa-clock text-green-600 text-xl mb-2"></i>
+                  <h5 class="font-semibold text-sm">Disponibilité</h5>
+                </div>
+              </div>
+
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-gray-800 mb-2">Bonnes pratiques :</h4>
+                <ul class="list-disc list-inside text-gray-700">
+                  <li>Mots de passe forts et MFA</li>
+                  <li>Mises à jour régulières</li>
+                  <li>Sauvegardes des données</li>
+                  <li>Sensibilisation aux phishing</li>
+                </ul>
+              </div>
+            </div>
+          `,
+        },
+        cloud: {
+          title: "Le Cloud Computing Expliqué",
+          content: `
+            <div class="space-y-4">
+              <p class="text-gray-700">Le <strong>cloud computing</strong> fournit des services informatiques (serveurs, stockage, logiciels) via internet.</p>
+              
+              <div class="bg-indigo-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-indigo-800 mb-2">📊 Modèles de service :</h4>
+                <ul class="list-disc list-inside text-gray-700">
+                  <li><strong>IaaS</strong> : Infrastructure (serveurs, stockage)</li>
+                  <li><strong>PaaS</strong> : Plateforme de développement</li>
+                  <li><strong>SaaS</strong> : Logiciels clé en main</li>
+                </ul>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-green-50 p-3 rounded-lg">
+                  <h5 class="font-semibold text-green-800">✅ Avantages</h5>
+                  <ul class="text-xs text-gray-700 mt-1">
+                    <li>Économies</li>
+                    <li>Scalabilité</li>
+                    <li>Accessibilité</li>
+                  </ul>
+                </div>
+                <div class="bg-orange-50 p-3 rounded-lg">
+                  <h5 class="font-semibold text-orange-800">⚠️ Défis</h5>
+                  <ul class="text-xs text-gray-700 mt-1">
+                    <li>Sécurité</li>
+                    <li>Dépendance réseau</li>
+                    <li>Conformité</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          `,
+        },
+      };
+
       // Catégories avec leurs informations
       const categories = {
         iot: { name: "IoT & Objets Connectés", icon: "🔗", color: "blue" },
@@ -512,6 +730,10 @@
       const clearSearch = document.getElementById("clearSearch");
       const dictionaryContent = document.getElementById("dictionaryContent");
       const categoryCards = document.querySelectorAll(".category-card");
+      const lessonModal = document.getElementById("lessonModal");
+      const lessonTitle = document.getElementById("lessonTitle");
+      const lessonContent = document.getElementById("lessonContent");
+      const closeModal = document.getElementById("closeModal");
 
       // Afficher le dictionnaire complet au chargement
       function displayFullDictionary() {
@@ -531,32 +753,64 @@
           const categoryInfo = categories[category];
           if (categoryInfo) {
             html += `
-                        <div class="mb-8">
-                            <div class="flex items-center mb-4">
-                                <span class="text-2xl mr-3">${categoryInfo.icon}</span>
-                                <h3 class="text-xl font-bold text-gray-800">${categoryInfo.name}</h3>
-                                <span class="ml-2 bg-${categoryInfo.color}-100 text-${categoryInfo.color}-800 text-sm px-2 py-1 rounded">${termsByCategory[category].length} termes</span>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    `;
+              <div class="mb-8">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center">
+                    <span class="text-2xl mr-3">${categoryInfo.icon}</span>
+                    <h3 class="text-xl font-bold text-gray-800">${categoryInfo.name}</h3>
+                    <span class="ml-2 bg-${categoryInfo.color}-100 text-${categoryInfo.color}-800 text-sm px-2 py-1 rounded">${termsByCategory[category].length} termes</span>
+                  </div>
+                  ${
+                    lessons[category]
+                      ? `
+                    <button class="view-lesson-btn flex items-center text-sm bg-${categoryInfo.color}-100 text-${categoryInfo.color}-700 px-3 py-1 rounded-lg hover:bg-${categoryInfo.color}-200 transition-colors" data-category="${category}">
+                      <i class="fas fa-graduation-cap mr-2"></i>
+                      Voir la leçon
+                    </button>
+                  `
+                      : ""
+                  }
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            `;
 
             termsByCategory[category].forEach((term) => {
               html += `
-                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                                <div class="font-medium text-gray-900">${term.en}</div>
-                                <div class="text-gray-600 mt-1">${term.fr}</div>
-                            </div>
-                        `;
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                  <div class="font-medium text-gray-900">${term.en}</div>
+                  <div class="text-gray-600 mt-1">${term.fr}</div>
+                </div>
+              `;
             });
 
             html += `
-                            </div>
-                        </div>
-                    `;
+                </div>
+              </div>
+            `;
           }
         });
 
         dictionaryContent.innerHTML = html;
+
+        // Ajouter les événements pour les boutons de leçon
+        document.querySelectorAll(".view-lesson-btn").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const category = btn.getAttribute("data-category");
+            showLesson(category);
+          });
+        });
+      }
+
+      // Afficher une leçon
+      function showLesson(category) {
+        const lesson = lessons[category];
+        if (lesson) {
+          lessonTitle.textContent = lesson.title;
+          lessonContent.innerHTML = lesson.content;
+          lessonModal.classList.remove("hidden");
+          lessonModal.classList.add("flex");
+        }
       }
 
       // Recherche de termes
@@ -570,7 +824,7 @@
         const results = dictionary.filter(
           (term) =>
             term.en.toLowerCase().includes(lowerQuery) ||
-            term.fr.toLowerCase().includes(lowerQuery)
+            term.fr.toLowerCase().includes(lowerQuery),
         );
 
         if (results.length > 0) {
@@ -579,22 +833,22 @@
             const categoryInfo = categories[term.category];
             const highlightedEn = term.en.replace(
               new RegExp(query, "gi"),
-              (match) => `<span class="search-highlight">${match}</span>`
+              (match) => `<span class="search-highlight">${match}</span>`,
             );
             const highlightedFr = term.fr.replace(
               new RegExp(query, "gi"),
-              (match) => `<span class="search-highlight">${match}</span>`
+              (match) => `<span class="search-highlight">${match}</span>`,
             );
 
             html += `
-                        <div class="p-3 border-b border-gray-200 hover:bg-gray-50 cursor-pointer search-result">
-                            <div class="font-medium">${highlightedEn}</div>
-                            <div class="text-gray-600 text-sm">${highlightedFr}</div>
-                            <div class="text-xs text-gray-400 mt-1">${
-                              categoryInfo ? categoryInfo.name : "Autre"
-                            }</div>
-                        </div>
-                    `;
+              <div class="p-3 border-b border-gray-200 hover:bg-gray-50 cursor-pointer search-result">
+                <div class="font-medium">${highlightedEn}</div>
+                <div class="text-gray-600 text-sm">${highlightedFr}</div>
+                <div class="text-xs text-gray-400 mt-1">${
+                  categoryInfo ? categoryInfo.name : "Autre"
+                }</div>
+              </div>
+            `;
           });
 
           searchResults.innerHTML = html;
@@ -611,10 +865,10 @@
             });
         } else {
           searchResults.innerHTML = `
-                    <div class="p-4 text-center text-gray-500">
-                        Aucun résultat trouvé pour "${query}"
-                    </div>
-                `;
+            <div class="p-4 text-center text-gray-500">
+              Aucun résultat trouvé pour "${query}"
+            </div>
+          `;
           searchResults.classList.remove("hidden");
         }
       }
@@ -625,31 +879,43 @@
         if (!categoryInfo) return;
 
         const filteredTerms = dictionary.filter(
-          (term) => term.category === category
+          (term) => term.category === category,
         );
 
         let html = `
-                <div class="mb-6">
-                    <button id="backToAll" class="flex items-center text-blue-600 hover:text-blue-800 mb-4">
-                        <i class="fas fa-arrow-left mr-2"></i>
-                        Retour au dictionnaire complet
-                    </button>
-                    <div class="flex items-center mb-4">
-                        <span class="text-2xl mr-3">${categoryInfo.icon}</span>
-                        <h2 class="text-2xl font-bold text-gray-800">${categoryInfo.name}</h2>
-                        <span class="ml-2 bg-${categoryInfo.color}-100 text-${categoryInfo.color}-800 text-sm px-2 py-1 rounded">${filteredTerms.length} termes</span>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            `;
+          <div class="mb-6">
+            <button id="backToAll" class="flex items-center text-blue-600 hover:text-blue-800 mb-4">
+              <i class="fas fa-arrow-left mr-2"></i>
+              Retour au dictionnaire complet
+            </button>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <span class="text-2xl mr-3">${categoryInfo.icon}</span>
+                <h2 class="text-2xl font-bold text-gray-800">${categoryInfo.name}</h2>
+                <span class="ml-2 bg-${categoryInfo.color}-100 text-${categoryInfo.color}-800 text-sm px-2 py-1 rounded">${filteredTerms.length} termes</span>
+              </div>
+              ${
+                lessons[category]
+                  ? `
+                <button id="viewLessonBtn" class="flex items-center bg-${categoryInfo.color}-100 text-${categoryInfo.color}-700 px-4 py-2 rounded-lg hover:bg-${categoryInfo.color}-200 transition-colors">
+                  <i class="fas fa-graduation-cap mr-2"></i>
+                  Voir la leçon
+                </button>
+              `
+                  : ""
+              }
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        `;
 
         filteredTerms.forEach((term) => {
           html += `
-                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                        <div class="font-medium text-gray-900">${term.en}</div>
-                        <div class="text-gray-600 mt-1">${term.fr}</div>
-                    </div>
-                `;
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+              <div class="font-medium text-gray-900">${term.en}</div>
+              <div class="text-gray-600 mt-1">${term.fr}</div>
+            </div>
+          `;
         });
 
         html += `</div>`;
@@ -659,6 +925,12 @@
         document
           .getElementById("backToAll")
           .addEventListener("click", displayFullDictionary);
+
+        // Ajouter l'événement au bouton de leçon
+        const viewLessonBtn = document.getElementById("viewLessonBtn");
+        if (viewLessonBtn) {
+          viewLessonBtn.addEventListener("click", () => showLesson(category));
+        }
       }
 
       // Événements
@@ -694,6 +966,19 @@
           const category = card.getAttribute("data-category");
           filterByCategory(category);
         });
+      });
+
+      // Modal events
+      closeModal.addEventListener("click", () => {
+        lessonModal.classList.add("hidden");
+        lessonModal.classList.remove("flex");
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === lessonModal) {
+          lessonModal.classList.add("hidden");
+          lessonModal.classList.remove("flex");
+        }
       });
 
       // Initialisation

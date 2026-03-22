@@ -1,1230 +1,303 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mathématiques - Formules et Concepts Clés</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-    ></script>
+    <title>Mathématiques - Chapitres</title>
+    <style>
+      /* Styles généraux */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f7fa;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* En-tête */
+      header {
+        background: linear-gradient(135deg, #1a2a6c, #2a3a7c);
+        color: white;
+        padding: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-icon {
+        margin-right: 10px;
+        font-size: 2rem;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 1.5rem;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #a8d0e6;
+      }
+
+      /* Section de présentation */
+      .hero {
+        padding: 3rem 0;
+        text-align: center;
+        background-color: white;
+        margin-bottom: 2rem;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #1a2a6c;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #555;
+      }
+
+      /* Grille des chapitres */
+      .chapters {
+        padding: 2rem 0;
+      }
+
+      .chapters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .chapter-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        cursor: pointer;
+      }
+
+      .chapter-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .chapter-icon {
+        height: 120px;
+        background: linear-gradient(135deg, #1a2a6c, #2a3a7c);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3rem;
+      }
+
+      .chapter-content {
+        padding: 1.5rem;
+      }
+
+      .chapter-content h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+        color: #1a2a6c;
+      }
+
+      .chapter-content p {
+        color: #666;
+        margin-bottom: 1.2rem;
+      }
+
+      .chapter-link {
+        display: inline-block;
+        background-color: #1a2a6c;
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+
+      .chapter-link:hover {
+        background-color: #2a3a7c;
+      }
+
+      /* Pied de page */
+      footer {
+        background-color: #1a2a6c;
+        color: white;
+        padding: 2rem 0;
+        margin-top: 3rem;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: #ccc;
+        margin-bottom: 0.5rem;
+        display: block;
+        text-decoration: none;
+      }
+
+      .footer-section a:hover {
+        color: white;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid #2a3a7c;
+        margin-top: 1.5rem;
+        color: #ccc;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        nav ul {
+          margin-top: 1rem;
+          justify-content: center;
+        }
+
+        nav ul li {
+          margin: 0 0.8rem;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+      }
+    </style>
   </head>
-  <body class="bg-gray-50">
+  <body>
     <!-- En-tête -->
-    <header
-      class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white shadow-lg"
-    >
-      <div class="container mx-auto px-4 py-6">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="flex items-center space-x-3 mb-4 md:mb-0">
-            <i class="fas fa-calculator text-3xl"></i>
-            <div>
-              <h1 class="text-2xl font-bold">Mathématiques</h1>
-              <p class="text-blue-200">Formules et concepts clés</p>
-            </div>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <span class="logo-icon">📚</span>
+            <span>Mathématique</span>
           </div>
-          <nav class="flex space-x-6">
-            <a href="/index.html" class="hover:text-blue-300 transition-colors"
-              >Accueil</a
-            >
-            <a href="/CEJM.html" class="hover:text-blue-300 transition-colors"
-              >CEJM</a
-            >
+          <nav>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+            </ul>
           </nav>
         </div>
       </div>
     </header>
 
-    <!-- Contenu principal -->
-    <main class="container mx-auto px-4 py-8">
-      <!-- En-tête de la page -->
-      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
-        <div class="flex items-center justify-between mb-4">
-          <div>
-            <span
-              class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mb-2"
-              >Mathématiques</span
-            >
-            <h1 class="text-3xl font-bold text-gray-800">
-              Formules et Concepts Clés
-            </h1>
-          </div>
-          <div class="hidden md:block bg-blue-50 p-4 rounded-lg">
-            <i class="fas fa-square-root-alt text-blue-600 text-4xl"></i>
-          </div>
-        </div>
-        <p class="text-gray-600">
-          Cette page regroupe les principales formules et concepts mathématiques
-          essentiels pour les études en économie et gestion.
+    <!-- Section de présentation -->
+    <section class="hero">
+      <div class="container">
+        <h1>Mathématique</h1>
+        <p>
+          Découvrez tous les chapitres du programme Math. Cliquez sur une carte
+          pour accéder au contenu détaillé des chapitres.
         </p>
       </div>
+    </section>
 
-      <div class="flex flex-col lg:flex-row gap-8">
-        <!-- Contenu principal -->
-        <div class="lg:w-2/3">
-          <!-- Section Probabilités -->
-          <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <div class="flex items-center mb-6">
-              <div
-                class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
-              >
-                <i class="fas fa-chart-pie"></i>
-              </div>
-              <h2 class="text-2xl font-bold text-gray-800">Probabilités</h2>
-            </div>
-
-            <!-- Formules de base -->
-            <div class="mb-8">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Formules fondamentales
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div
-                  class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-blue-700 mb-2">
-                    Probabilité du contraire
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-blue-100"
-                  >
-                    \( P(\bar{A}) = 1 - P(A) \)
-                  </div>
-                </div>
-
-                <div
-                  class="bg-green-50 border-l-4 border-green-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-green-700 mb-2">
-                    Probabilité de A ou B
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-green-100"
-                  >
-                    \( P(A \cup B) = P(A) + P(B) - P(A \cap B) \)
-                  </div>
-                </div>
-
-                <div
-                  class="bg-purple-50 border-l-4 border-purple-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-purple-700 mb-2">
-                    Probabilité de A et B
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-purple-100"
-                  >
-                    \( P(A \cap B) = P(A) \times P(B|A) \)
-                  </div>
-                </div>
-
-                <div
-                  class="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-red-700 mb-2">
-                    Probabilité conditionnelle
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-red-100"
-                  >
-                    \( P(A|B) = \frac{P(A \cap B)}{P(B)} \)
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Formule des probabilités totales -->
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Formule des probabilités totales
-              </h3>
-              <div
-                class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg"
-              >
-                <div class="text-center text-lg font-mono">
-                  \( P(A) = P(B \cap A) + P(\bar{B} \cap A) \)
-                </div>
-                <p class="text-sm text-gray-600 mt-2">
-                  La probabilité de A est égale à la somme des probabilités de A
-                  avec B et de A avec le contraire de B.
-                </p>
-              </div>
-            </div>
-
-            <!-- Arbre de probabilités -->
-            <div>
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Arbre de probabilités
-              </h3>
-              <div class="bg-gray-100 p-6 rounded-lg">
-                <img
-                  src="data:image/png;base64,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"
-                  alt=""
-                  class="justify-center items-center"
-                />
-                <p class="text-sm text-gray-600 text-center mt-4">
-                  L'arbre permet de visualiser les différentes issues et de
-                  calculer les probabilités composées.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Section Fonctions de référence -->
-          <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <div class="flex items-center mb-6">
-              <div
-                class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
-              >
-                <i class="fas fa-superscript"></i>
-              </div>
-              <h2 class="text-2xl font-bold text-gray-800">
-                Fonctions de référence
-              </h2>
-            </div>
-
-            <!-- Fonctions affines -->
-            <div class="mb-8">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Fonctions affines
-              </h3>
-              <div
-                class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6"
-              >
-                <div class="text-center text-lg font-mono">
-                  \( y = mx + p \)
-                </div>
-                <p class="text-sm text-gray-600 mt-2">
-                  Où <span class="font-semibold">m</span> est le coefficient
-                  directeur et <span class="font-semibold">p</span> est
-                  l'ordonnée à l'origine.
-                </p>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-4 rounded-lg border border-blue-200">
-                  <h4 class="font-semibold text-blue-700 mb-2">
-                    Calcul du coefficient directeur
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-gray-100 p-3 rounded mb-3"
-                  >
-                    \( m = \frac{\Delta y}{\Delta x} = \frac{y_B - y_A}{x_B -
-                    x_A} \)
-                  </div>
-                  <p class="text-sm text-gray-600">
-                    Pour deux points A(x₁, y₁) et B(x₂, y₂) de la droite.
-                  </p>
-                </div>
-
-                <div class="bg-white p-4 rounded-lg border border-blue-200">
-                  <h4 class="font-semibold text-blue-700 mb-2">
-                    Point d'intersection avec l'axe des abscisses
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-gray-100 p-3 rounded mb-3"
-                  >
-                    \( mx + p = 0 \Rightarrow mx = -p \Rightarrow x =
-                    -\frac{p}{m} \)
-                  </div>
-                  <p class="text-sm text-gray-600">
-                    Résoudre l'équation pour trouver l'abscisse à l'origine.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Fonctions polynômes -->
-            <div class="mb-8">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Fonctions polynômes (trinômes)
-              </h3>
-              <div
-                class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg mb-6"
-              >
-                <div class="text-center text-lg font-mono">
-                  \( f(x) = ax^2 + bx + c \)
-                </div>
-              </div>
-
-              <div class="mb-6">
-                <h4 class="text-lg font-semibold text-gray-700 mb-3">
-                  Calcul du discriminant (Δ)
-                </h4>
-                <div
-                  class="text-center text-lg font-mono bg-gray-100 p-3 rounded mb-3"
-                >
-                  \( \Delta = b^2 - 4ac \)
-                </div>
-
-                <div class="overflow-x-auto">
-                  <table
-                    class="min-w-full divide-y divide-gray-200 border border-gray-300 rounded-lg overflow-hidden"
-                  >
-                    <thead class="bg-blue-600 text-white">
-                      <tr>
-                        <th
-                          class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
-                        >
-                          Δ
-                        </th>
-                        <th
-                          class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
-                        >
-                          Racines
-                        </th>
-                        <th
-                          class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
-                        >
-                          Forme factorisée
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                      <tr class="hover:bg-gray-50">
-                        <td
-                          class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                        >
-                          \( \Delta > 0 \)
-                        </td>
-                        <td class="px-6 py-4 text-sm text-gray-500">
-                          \( x_1 = \frac{-b - \sqrt{\Delta}}{2a} \), \( x_2 =
-                          \frac{-b + \sqrt{\Delta}}{2a} \)
-                        </td>
-                        <td class="px-6 py-4 text-sm text-gray-500">
-                          \( a(x - x_1)(x - x_2) \)
-                        </td>
-                      </tr>
-                      <tr class="hover:bg-gray-50">
-                        <td
-                          class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                        >
-                          \( \Delta = 0 \)
-                        </td>
-                        <td class="px-6 py-4 text-sm text-gray-500">
-                          \( x_0 = -\frac{b}{2a} \)
-                        </td>
-                        <td class="px-6 py-4 text-sm text-gray-500">
-                          \( a(x - x_0)^2 \)
-                        </td>
-                      </tr>
-                      <tr class="hover:bg-gray-50">
-                        <td
-                          class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                        >
-                          \( \Delta < 0 \)
-                        </td>
-                        <td class="px-6 py-4 text-sm text-gray-500">
-                          Aucune racine réelle
-                        </td>
-                        <td class="px-6 py-4 text-sm text-gray-500">
-                          Pas de factorisation réelle
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div>
-                <h4 class="text-lg font-semibold text-gray-700 mb-3">
-                  Signe du trinôme
-                </h4>
-                <div class="bg-white p-4 rounded-lg border border-gray-200">
-                  <p class="text-sm text-gray-600 mb-3">
-                    Le signe de \( ax^2 + bx + c \) dépend du signe de a et de Δ
-                    :
-                  </p>
-                  <ul
-                    class="text-sm text-gray-600 list-disc list-inside space-y-1"
-                  >
-                    <li>
-                      Si \( \Delta < 0 \) : signe de a sur \( \mathbb{R} \)
-                    </li>
-                    <li>
-                      Si \( \Delta = 0 \) : signe de a sur \( \mathbb{R}
-                      \setminus \{x_0\} \), nul en \( x_0 \)
-                    </li>
-                    <li>
-                      Si \( \Delta > 0 \) : signe de a à l'extérieur des
-                      racines, signe contraire entre les racines
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <!-- Fonctions exponentielle et logarithme -->
-            <div>
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Fonctions exponentielle et logarithme
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div
-                  class="bg-purple-50 border-l-4 border-purple-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-purple-700 mb-2">
-                    Propriétés fondamentales
-                  </h4>
-                  <div class="space-y-2">
-                    <div
-                      class="flex justify-between items-center bg-white p-2 rounded border border-purple-100"
-                    >
-                      <span class="text-sm">\( e^0 = 1 \)</span>
-                    </div>
-                    <div
-                      class="flex justify-between items-center bg-white p-2 rounded border border-purple-100"
-                    >
-                      <span class="text-sm">\( \ln(e) = 1 \)</span>
-                    </div>
-                    <div
-                      class="flex justify-between items-center bg-white p-2 rounded border border-purple-100"
-                    >
-                      <span class="text-sm">\( e^1 = e \)</span>
-                    </div>
-                    <div
-                      class="flex justify-between items-center bg-white p-2 rounded border border-purple-100"
-                    >
-                      <span class="text-sm">\( \ln(1) = 0 \)</span>
-                    </div>
-                    <div
-                      class="flex justify-between items-center bg-white p-2 rounded border border-purple-100"
-                    >
-                      <span class="text-sm">\( \ln(e^x) = x \)</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="bg-orange-50 border-l-4 border-orange-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-orange-700 mb-2">
-                    Propriétés opératoires
-                  </h4>
-                  <div class="space-y-2">
-                    <div class="bg-white p-2 rounded border border-orange-100">
-                      <p class="text-sm">
-                        \( \ln\left(\frac{1}{a}\right) = -\ln(a) \)
-                      </p>
-                    </div>
-                    <div class="bg-white p-2 rounded border border-orange-100">
-                      <p class="text-sm">
-                        \( \ln\left(\frac{a}{b}\right) = \ln(a) - \ln(b) \)
-                      </p>
-                    </div>
-                    <div class="bg-white p-2 rounded border border-orange-100">
-                      <p class="text-sm">\( \ln(a^n) = n \cdot \ln(a) \)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Section Dérivées -->
-          <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <div class="flex items-center mb-6">
-              <div
-                class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
-              >
-                <i class="fas fa-sliders-h"></i>
-              </div>
-              <h2 class="text-2xl font-bold text-gray-800">
-                Dérivées de fonctions
-              </h2>
-            </div>
-
-            <div class="overflow-x-auto">
-              <table
-                class="min-w-full divide-y divide-gray-200 border border-gray-300 rounded-lg overflow-hidden"
-              >
-                <thead class="bg-blue-600 text-white">
-                  <tr>
-                    <th
-                      class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
-                    >
-                      Fonction f(x)
-                    </th>
-                    <th
-                      class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
-                    >
-                      Dérivée f'(x)
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                  <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( k \) (constante)
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( 0 \)
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( \frac{1}{x} \)
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( -\frac{1}{x^2} \)
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( x^n \)
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( n \cdot x^{n-1} \)
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( \ln(x) \)
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( \frac{1}{x} \)
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( kx \)
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( k \)
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( x^2 \)
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( 2x \)
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( e^x \)
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                      \( e^x \)
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <!-- Section Suites -->
-          <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <div class="flex items-center mb-6">
-              <div
-                class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
-              >
-                <i class="fas fa-sort-numeric-up"></i>
-              </div>
-              <h2 class="text-2xl font-bold text-gray-800">
-                Suites numériques
-              </h2>
-            </div>
-
-            <!-- Suite géométrique -->
-            <div class="mb-8">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Suite géométrique
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div
-                  class="bg-green-50 border-l-4 border-green-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-green-700 mb-2">
-                    Relation de récurrence
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-green-100"
-                  >
-                    \( U_{n+1} = q \cdot U_n \)
-                  </div>
-                </div>
-
-                <div
-                  class="bg-green-50 border-l-4 border-green-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-green-700 mb-2">Terme général</h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-green-100"
-                  >
-                    \( U_n = U_0 \cdot q^n \)
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Suite arithmétique -->
-            <div class="mb-8">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Suite arithmétique
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div
-                  class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-blue-700 mb-2">
-                    Relation de récurrence
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-blue-100"
-                  >
-                    \( U_{n+1} = U_n + r \)
-                  </div>
-                </div>
-
-                <div
-                  class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-blue-700 mb-2">Terme général</h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-blue-100"
-                  >
-                    \( U_n = U_0 + n \cdot r \)
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sommes des suites -->
-            <div>
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Sommes des suites
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div
-                  class="bg-purple-50 border-l-4 border-purple-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-purple-700 mb-2">
-                    Somme suite géométrique
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-purple-100"
-                  >
-                    \( S = U_0 \cdot \frac{1 - q^{n+1}}{1 - q} \)
-                  </div>
-                </div>
-
-                <div
-                  class="bg-orange-50 border-l-4 border-orange-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-orange-700 mb-2">
-                    Somme suite arithmétique
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-orange-100"
-                  >
-                    \( S = \frac{(U_0 + U_n) \cdot (n+1)}{2} \)
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Section Progression linéaire -->
-          <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <div class="flex items-center mb-6">
-              <div
-                class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
-              >
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <h2 class="text-2xl font-bold text-gray-800">
-                Progression linéaire
-              </h2>
-            </div>
-
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Ajustement affine
-              </h3>
-              <div
-                class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg"
-              >
-                <p class="text-gray-700">
-                  Faire un ajustement affine consiste à trouver une droite qui
-                  passe le plus près possible des points du nuage.
-                </p>
-                <div class="text-center text-lg font-mono mt-3">
-                  \( y = ax + b \)
-                </div>
-              </div>
-            </div>
-
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Méthode des moindres carrés
-              </h3>
-              <div
-                class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg"
-              >
-                <p class="text-gray-700">
-                  La méthode des moindres carrés est l'ajustement affine optimal
-                  qui minimise la somme des carrés des écarts entre les points
-                  observés et la droite.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Coefficient de corrélation linéaire
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div
-                  class="bg-purple-50 border-l-4 border-purple-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-purple-700 mb-2">Définition</h4>
-                  <p class="text-gray-700 text-sm">
-                    Le coefficient r mesure la qualité de l'ajustement linéaire
-                    entre les variables x et y.
-                  </p>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-purple-100 mt-3"
-                  >
-                    \( -1 \leq r \leq 1 \)
-                  </div>
-                </div>
-
-                <div
-                  class="bg-orange-50 border-l-4 border-orange-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-orange-700 mb-2">Interprétation</h4>
-                  <ul
-                    class="text-sm text-gray-600 list-disc list-inside space-y-1"
-                  >
-                    <li>\( r = 1 \) : corrélation parfaite positive</li>
-                    <li>\( r \approx 1 \) : forte corrélation positive</li>
-                    <li>\( r \approx 0 \) : faible corrélation</li>
-                    <li>\( r \approx -1 \) : forte corrélation négative</li>
-                    <li>\( r = -1 \) : corrélation parfaite négative</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Section Loi binomiale -->
-          <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <div class="flex items-center mb-6">
-              <div
-                class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
-              >
-                <i class="fas fa-dice"></i>
-              </div>
-              <h2 class="text-2xl font-bold text-gray-800">Loi binomiale</h2>
-            </div>
-
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Conditions d'application
-              </h3>
-              <div
-                class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg"
-              >
-                <p class="text-gray-700">
-                  Plusieurs expériences sont identiques et indépendantes si :
-                </p>
-                <ul
-                  class="text-sm text-gray-600 list-disc list-inside mt-2 space-y-1"
-                >
-                  <li>Elles ont les mêmes issues</li>
-                  <li>
-                    Les probabilités des issues ne changent pas d'une expérience
-                    à l'autre
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Coefficient binomial
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div
-                  class="bg-white p-4 rounded-lg border border-gray-200 text-center"
-                >
-                  <div class="text-lg font-mono">
-                    \( \binom{n}{k} = \binom{n}{n-k} \)
-                  </div>
-                  <p class="text-xs text-gray-600 mt-1">Symétrie</p>
-                </div>
-                <div
-                  class="bg-white p-4 rounded-lg border border-gray-200 text-center"
-                >
-                  <div class="text-lg font-mono">\( \binom{n}{1} = n \)</div>
-                  <p class="text-xs text-gray-600 mt-1">Choix simple</p>
-                </div>
-                <div
-                  class="bg-white p-4 rounded-lg border border-gray-200 text-center"
-                >
-                  <div class="text-lg font-mono">\( \binom{n}{n} = 1 \)</div>
-                  <p class="text-xs text-gray-600 mt-1">Tous les éléments</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Loi binomiale \( \mathcal{B}(n, p) \)
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div
-                  class="bg-green-50 border-l-4 border-green-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-green-700 mb-2">Espérance</h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-green-100"
-                  >
-                    \( E(X) = n \cdot p \)
-                  </div>
-                </div>
-
-                <div
-                  class="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-red-700 mb-2">Écart-type</h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-red-100"
-                  >
-                    \( \sigma(X) = \sqrt{n \cdot p \cdot (1-p)} \)
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Comportement selon p
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-4 rounded-lg border border-blue-200">
-                  <h4 class="font-semibold text-blue-700 mb-2">
-                    p proche de 0
-                  </h4>
-                  <p class="text-sm text-gray-600">
-                    Plus de chances d'obtenir un petit nombre de succès
-                  </p>
-                </div>
-                <div class="bg-white p-4 rounded-lg border border-green-200">
-                  <h4 class="font-semibold text-green-700 mb-2">
-                    p proche de 1
-                  </h4>
-                  <p class="text-sm text-gray-600">
-                    Plus de chances d'obtenir un grand nombre de succès
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Section Loi uniforme -->
-          <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <div class="flex items-center mb-6">
-              <div
-                class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
-              >
-                <i class="fas fa-equals"></i>
-              </div>
-              <h2 class="text-2xl font-bold text-gray-800">Loi uniforme</h2>
-            </div>
-
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Définition
-              </h3>
-              <div
-                class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg"
-              >
-                <p class="text-gray-700">
-                  La loi uniforme sur \( I = [a;b] \) a pour densité de
-                  probabilité :
-                </p>
-                <div class="text-center text-lg font-mono mt-3">
-                  \( f(x) = \begin{cases} \frac{1}{b-a} & \text{si } x \in [a;b]
-                  \\ 0 & \text{sinon} \end{cases} \)
-                </div>
-              </div>
-            </div>
-
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Calcul de probabilités
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-4 rounded-lg border border-gray-200">
-                  <h4 class="font-semibold text-gray-700 mb-2">
-                    Probabilité sur un intervalle
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-gray-100 p-3 rounded mb-3"
-                  >
-                    \( P(\alpha < X < \beta) = \frac{\beta - \alpha}{b - a} \)
-                  </div>
-                  <p class="text-sm text-gray-600">
-                    Pour \( \alpha, \beta \in [a;b] \) avec \( \alpha < \beta \)
-                  </p>
-                </div>
-
-                <div class="bg-white p-4 rounded-lg border border-gray-200">
-                  <h4 class="font-semibold text-gray-700 mb-2">
-                    Probabilité complémentaire
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-gray-100 p-3 rounded mb-3"
-                  >
-                    \( P(X > \alpha) = 1 - P(X < \alpha) \)
-                  </div>
-                  <p class="text-sm text-gray-600">
-                    Relation entre probabilités complémentaires
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Caractéristiques
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div
-                  class="bg-green-50 border-l-4 border-green-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-green-700 mb-2">Espérance</h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-green-100"
-                  >
-                    \( E(X) = \frac{a + b}{2} \)
-                  </div>
-                </div>
-
-                <div
-                  class="bg-purple-50 border-l-4 border-purple-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-purple-700 mb-2">Variance</h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-purple-100"
-                  >
-                    \( V(X) = \frac{(b - a)^2}{12} \)
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Section Primitives et intégrales -->
-          <section class="bg-white rounded-xl shadow-md p-6">
-            <div class="flex items-center mb-6">
-              <div
-                class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
-              >
-                <i class="fas fa-prescription"></i>
-              </div>
-              <h2 class="text-2xl font-bold text-gray-800">
-                Primitives et intégrales
-              </h2>
-            </div>
-
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Primitives usuelles
-              </h3>
-              <div class="overflow-x-auto">
-                <table
-                  class="min-w-full divide-y divide-gray-200 border border-gray-300 rounded-lg overflow-hidden"
-                >
-                  <thead class="bg-blue-600 text-white">
-                    <tr>
-                      <th
-                        class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
-                      >
-                        Fonction f(x)
-                      </th>
-                      <th
-                        class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
-                      >
-                        Primitive F(x)
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="bg-white divide-y divide-gray-200">
-                    <tr class="hover:bg-gray-50">
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                        \( a \) (constante)
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                        \( ax \)
-                      </td>
-                    </tr>
-                    <tr class="hover:bg-gray-50">
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                        \( x^n \)
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                        \( \frac{x^{n+1}}{n+1} \)
-                      </td>
-                    </tr>
-                    <tr class="hover:bg-gray-50">
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                        \( \frac{1}{x^2} \)
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                        \( -\frac{1}{x} \)
-                      </td>
-                    </tr>
-                    <tr class="hover:bg-gray-50">
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                        \( \frac{1}{x} \)
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                        \( \ln|x| \)
-                      </td>
-                    </tr>
-                    <tr class="hover:bg-gray-50">
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                        \( e^x \)
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-mono">
-                        \( e^x \)
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Primitives avec fonction composée
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div
-                  class="bg-green-50 border-l-4 border-green-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-green-700 mb-2">
-                    Fonction puissance
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-green-100"
-                  >
-                    \( \int u' \cdot u^n = \frac{u^{n+1}}{n+1} \)
-                  </div>
-                </div>
-
-                <div
-                  class="bg-purple-50 border-l-4 border-purple-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-purple-700 mb-2">
-                    Fonction exponentielle
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-purple-100"
-                  >
-                    \( \int u' \cdot e^u = e^u \)
-                  </div>
-                </div>
-
-                <div
-                  class="bg-orange-50 border-l-4 border-orange-500 p-5 rounded-r-lg"
-                >
-                  <h4 class="font-bold text-orange-700 mb-2">
-                    Fonction logarithme
-                  </h4>
-                  <div
-                    class="text-center text-lg font-mono bg-white p-3 rounded border border-orange-100"
-                  >
-                    \( \int \frac{u'}{u} = \ln|u| \)
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Ensemble -->
-          <section class="bg-white rounded-xl shadow-md p-6 mb-8 mt-8">
-            <div class="flex items-center mb-6">
-              <div
-                class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4"
-              >
-                <i class="fas fa-record-vinyl"></i>
-              </div>
-              <h2 class="text-2xl font-bold text-gray-800">Ensemble</h2>
-            </div>
-
-            <!-- Ensemble -->
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">
-                Application d'un ensemble E dans un ensemble F
-              </h3>
-              <div
-                class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg"
-              >
-                <div class="text-center text-lg font-mono">
-                  <h1>INJECTION</h1>
-                </div>
-                <p class="text-sm text-gray-600 mt-2">
-                  Tout les éléments de F a au maximum 1 antécédent dans E
-                </p>
-              </div>
-              <div
-                class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg mt-2"
-              >
-                <div class="text-center text-lg font-mono">
-                  <h1>SURJECTION</h1>
-                </div>
-                <p class="text-sm text-gray-600 mt-2">
-                  Tout les éléments de F a au moins 1 antécédent dans E
-                </p>
-              </div>
-              <div
-                class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mt-2"
-              >
-                <div class="text-center text-lg font-mono">
-                  <h1>BIJECTION</h1>
-                </div>
-                <p class="text-sm text-gray-600 mt-2">
-                  Tout éléments de F a exactement 1 antécédent dans E
-                </p>
-              </div>
-            </div>
-
-            <!-- Arbre de probabilités -->
-            <div>
-              <h3 class="text-xl font-semibold text-gray-700 mb-4">Ensemble</h3>
-              <div class="bg-gray-100 p-6 rounded-lg">
-                <img
-                  src="https://ds055uzetaobb.cloudfront.net/brioche/uploads/EkswlzPrzb-examp.svg?width=300"
-                  alt=""
-                  class="flex center justify-center items-center"
-                />
-              </div>
-            </div>
-
-            <div class="bg-white p-4 rounded-lg border border-gray-200 mt-6">
-              <h4 class="font-semibold text-gray-700 mb-2">
-                Fonctions composées
-              </h4>
-              <div class="text-center text-lg bg-gray-100 p-3 rounded mb-3">
-                - Lorsqu'on a deux fonctions f et g, la fonction g o f est la
-                fonction définie par g o f(x) = g[f(x)]. <br />
-                - C'est l'application de f dans g (on remplace les x de la
-                fonction g par la fonction f)
-              </div>
-              <p class="text-sm text-gray-600">Lire "g rond f"</p>
-            </div>
-
-            <div
-              class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6 mt-6"
-            >
-              <div class="text-center text-lg font-mono">g°f(x) = ln(5x)</div>
-              <p class="text-sm text-gray-600 mt-2">
-                Où f(x) = 5x et g(x) = ln(x)
+    <!-- Grille des chapitres -->
+    <section class="chapters">
+      <div class="container">
+        <div class="chapters-grid">
+          <div
+            class="chapter-card"
+            onclick="window.location.href = '/MathMA.html'"
+          >
+            <div class="chapter-icon">💰</div>
+            <div class="chapter-content">
+              <h3>MA</h3>
+              <p>
+                Découvrez les concepts de base de l'économie, les mécanismes de
+                marché et les différents agents économiques
               </p>
+              <a href="/CEJM/chap1.html" class="chapter-link"
+                >Accéder a la MA</a
+              >
             </div>
-          </section>
-        </div>
+          </div>
 
-        <!-- Barre latérale -->
-        <div class="lg:w-1/3">
-          <div class="sticky top-8">
-            <!-- Formules importantes -->
-            <div class="bg-white rounded-xl shadow-md p-6 mb-6">
-              <h3 class="text-lg font-bold text-gray-800 mb-4">
-                Formules importantes
-              </h3>
-              <div class="space-y-4">
-                <div class="border-l-4 border-blue-500 pl-4">
-                  <h4 class="font-semibold text-gray-700">Discriminant</h4>
-                  <p class="text-sm font-mono text-gray-600">
-                    \( \Delta = b^2 - 4ac \)
-                  </p>
-                </div>
-                <div class="border-l-4 border-green-500 pl-4">
-                  <h4 class="font-semibold text-gray-700">
-                    Espérance binomiale
-                  </h4>
-                  <p class="text-sm font-mono text-gray-600">\( E(X) = np \)</p>
-                </div>
-                <div class="border-l-4 border-purple-500 pl-4">
-                  <h4 class="font-semibold text-gray-700">Suite géométrique</h4>
-                  <p class="text-sm font-mono text-gray-600">
-                    \( U_n = U_0 \cdot q^n \)
-                  </p>
-                </div>
-                <div class="border-l-4 border-orange-500 pl-4">
-                  <h4 class="font-semibold text-gray-700">Dérivée de ln(x)</h4>
-                  <p class="text-sm font-mono text-gray-600">
-                    \( \frac{d}{dx}\ln(x) = \frac{1}{x} \)
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Aide mémoire -->
-            <div class="bg-white rounded-xl shadow-md p-6">
-              <h3 class="text-lg font-bold text-gray-800 mb-4">Aide mémoire</h3>
-              <div class="space-y-3">
-                <div class="bg-blue-50 p-3 rounded-lg">
-                  <h4 class="font-semibold text-blue-700 text-sm mb-1">
-                    Logarithmes
-                  </h4>
-                  <p class="text-xs text-gray-600">
-                    \( \ln(ab) = \ln(a) + \ln(b) \)
-                  </p>
-                </div>
-                <div class="bg-green-50 p-3 rounded-lg">
-                  <h4 class="font-semibold text-green-700 text-sm mb-1">
-                    Exponentielles
-                  </h4>
-                  <p class="text-xs text-gray-600">
-                    \( e^{a+b} = e^a \cdot e^b \)
-                  </p>
-                </div>
-                <div class="bg-purple-50 p-3 rounded-lg">
-                  <h4 class="font-semibold text-purple-700 text-sm mb-1">
-                    Probabilités
-                  </h4>
-                  <p class="text-xs text-gray-600">
-                    \( P(A \cup B) = P(A) + P(B) - P(A \cap B) \)
-                  </p>
-                </div>
-              </div>
+          <div
+            class="chapter-card"
+            onclick="window.location.href = '/MathMI.html'"
+          >
+            <div class="chapter-icon">⚖️</div>
+            <div class="chapter-content">
+              <h3>MI</h3>
+              <p>
+                Congrus, convertion, ensemble, ensemble dans ensemble, prédicat,
+                table de vérité, graphe orienté, calcul booléen, relation
+              </p>
+              <a href="/MathMI.html" class="chapter-link">Accéder a la MI</a>
             </div>
           </div>
         </div>
       </div>
-    </main>
-
-    <script>
-      // Configuration de MathJax
-      window.MathJax = {
-        tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
-          ],
-          displayMath: [
-            ["$$", "$$"],
-            ["\\[", "\\]"],
-          ],
-        },
-        svg: {
-          fontCache: "global",
-        },
-      };
-    </script>
+    </section>
   </body>
 </html>
