@@ -1,11 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Chapitre 15 - Quels sont les choix stratégiques opérés par l'entreprise
-    </title>
+    <title>Chapitre 16 - Mécanisme de coordination</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -1045,7 +1043,7 @@
         for (let i = 1; i <= totalQuestions; i++) {
           const questionName = `quiz${i}`;
           const selectedOption = document.querySelector(
-            `input[name="${questionName}"]:checked`
+            `input[name="${questionName}"]:checked`,
           );
           const resultElement = document.getElementById(`result${i}`);
 
@@ -1131,7 +1129,7 @@
           const questionName = this.name;
           const questionNumber = questionName.replace("quiz", "");
           const resultElement = document.getElementById(
-            `result${questionNumber}`
+            `result${questionNumber}`,
           );
 
           if (this.value === correctAnswers[questionName]) {
