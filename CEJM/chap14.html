@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -527,6 +527,17 @@
                         class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                       >
                         <div class="flex items-center">
+                          <i class="fa-solid fa-cube text-red-500 mr-2"></i>
+                          Ressources tangibles
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50">
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                      >
+                        <div class="flex items-center">
                           <i class="fas fa-users text-blue-500 mr-2"></i>
                           Ressources humaines
                         </div>
@@ -579,11 +590,91 @@
                           Ressources intangibles
                         </div>
                       </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                      >
+                        <div class="flex items-center">
+                          <i class="fas fa-users text-blue-500 mr-2"></i>
+                          Ressources humaines
+                        </div>
+                      </td>
                       <td class="px-6 py-4 text-sm text-gray-500">
-                        Compétences, savoir-faire, 2 brevets/an
+                        Compétences, savoir faire
                       </td>
                       <td class="px-6 py-4 text-sm text-gray-500">
                         Manque de formation, mauvaise réputation
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                      >
+                        <div class="flex items-center">
+                          <i
+                            class="fa-solid fa-circle-info text-black-500 mr-2"
+                          ></i>
+                          Ressources informationnelles
+                        </div>
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-500">
+                        SI performant
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-500">
+                        Mauvaise réputation
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                      >
+                        <div class="flex items-center">
+                          <i
+                            class="fa-solid fa-computer text-pink-500 mr-2"
+                          ></i>
+                          Ressources technologiques
+                        </div>
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-500">
+                        2 brevets/an
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-500">
+                        Pas d'innovation
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                      >
+                        <div class="flex items-center">
+                          <i
+                            class="fa-solid fa-building-flag text-orange-500 mr-2"
+                          ></i>
+                          Ressources organisationnelles
+                        </div>
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-500">
+                        style de management participatif
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-500">
+                        Style de management autoritaire
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                      >
+                        <div class="flex items-center">
+                          <i
+                            class="fa-solid fa-dumpster text-gray-500 mr-2"
+                          ></i>
+                          Ressources commerciales
+                        </div>
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-500">La marque</td>
+                      <td class="px-6 py-4 text-sm text-gray-500">
+                        ----------------
                       </td>
                     </tr>
                   </tbody>
@@ -1222,7 +1313,7 @@
         for (let i = 1; i <= totalQuestions; i++) {
           const questionName = `quiz${i}`;
           const selectedOption = document.querySelector(
-            `input[name="${questionName}"]:checked`
+            `input[name="${questionName}"]:checked`,
           );
           const resultElement = document.getElementById(`result${i}`);
 
@@ -1308,7 +1399,7 @@
           const questionName = this.name;
           const questionNumber = questionName.replace("quiz", "");
           const resultElement = document.getElementById(
-            `result${questionNumber}`
+            `result${questionNumber}`,
           );
 
           if (this.value === correctAnswers[questionName]) {

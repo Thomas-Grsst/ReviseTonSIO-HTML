@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -202,6 +202,48 @@
                         class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
                       >
                         Production non marchande
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="flex items-center">
+                          <div
+                            class="flex-shrink-0 h-10 w-10 bg-green-100 rounded-full flex items-center justify-center"
+                          >
+                            <i class="fas fa-building text-green-600"></i>
+                          </div>
+                          <div class="ml-4">
+                            <div class="text-sm font-medium text-gray-900">
+                              Les associations
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
+                      >
+                        ----------------------
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="flex items-center">
+                          <div
+                            class="flex-shrink-0 h-10 w-10 bg-green-100 rounded-full flex items-center justify-center"
+                          >
+                            <i class="fas fa-building text-green-600"></i>
+                          </div>
+                          <div class="ml-4">
+                            <div class="text-sm font-medium text-gray-900">
+                              Le reste du monde
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
+                      >
+                        ----------------------
                       </td>
                     </tr>
                   </tbody>
@@ -593,7 +635,7 @@
         for (let i = 1; i <= totalQuestions; i++) {
           const questionName = `quiz${i}`;
           const selectedOption = document.querySelector(
-            `input[name="${questionName}"]:checked`
+            `input[name="${questionName}"]:checked`,
           );
           const resultElement = document.getElementById(`result${i}`);
 
@@ -681,7 +723,7 @@
           const questionName = this.name;
           const questionNumber = questionName.replace("quiz", "");
           const resultElement = document.getElementById(
-            `result${questionNumber}`
+            `result${questionNumber}`,
           );
 
           if (this.value === correctAnswers[questionName]) {
